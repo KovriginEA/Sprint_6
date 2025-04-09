@@ -5,15 +5,15 @@ from pages.base_page import BasePage
 
 class MainPage(BasePage):
 
-    @allure.step('Подождать прогрузки кнопки "Заказать" в хэдере')
+    @allure.step('Ждем прогрузку кнопки заказать')
     def wait_order_button(self):
         self.wait_visibility_of_element(MainPageLocators.order_button)
 
-    @allure.step('Кликнуть по кнопке "Заказать" в хэдере')
+    @allure.step('Клик по кнопке заказать')
     def click_order_button(self):
         self.click_on_element(MainPageLocators.order_button)
 
-    @allure.step('Подождать прогрузки части лого с надписью "Самокат" в хэдере')
+    @allure.step('Ждем прогрузку логотипа самокат')
     def wait_logo_scooter(self):
         self.wait_visibility_of_element(MainPageLocators.logo_scooter)
 
@@ -37,22 +37,22 @@ class MainPage(BasePage):
     def verify_main_header_is_displaying(self):
         return self.verify_displaying_of_element(MainPageLocators.main_header)
 
-    # @allure.step('Проскроллить до секции "Вопросы о важном"')
-    # def scroll_to_faq_section(self):
-    #     self.scroll_to_element(MainPageLocators.faq_section)
-    #
-    # @allure.step('Подождать прогрузки нужного номера вопроса в аккордеоне "Вопросы о важнoм"')
-    # def wait_visibility_of_faq_items(self, data):
-    #     self.wait_visibility_of_element(MainPageLocators.faq_questions_items[data])
-    #
-    # @allure.step('Кликнуть на нужный номер вопроса в аккордеоне "Вопросы о важнoм"')
-    # def click_on_faq_items(self, data):
-    #     self.click_on_element(MainPageLocators.faq_questions_items[data])
-    #
-    # @allure.step('Подождать прогрузки нужного номера ответа в аккордеоне "Вопросы о важнoм"')
-    # def wait_visibility_of_faq_answer(self, data):
-    #     self.wait_visibility_of_element(MainPageLocators.faq_answers_items[data])
-    #
-    # @allure.step('Получить текст нужного номера ответа в аккордеоне "Вопросы о важнoм"')
-    # def get_displayed_text_from_faq_answer(self, data):
-    #     return self.get_text_on_element(MainPageLocators.faq_answers_items[data])
+    @allure.step('Скролл на секцию вопросов  о важном')
+    def scroll_to_important_question(self):
+        self.scroll_to_element(MainPageLocators.question_section)
+
+    @allure.step('Ожидание загрузки вопроса')
+    def wait_visibility_question(self, data):
+        self.wait_visibility_of_element(MainPageLocators.questions[data])
+
+    @allure.step('Клик на вопрос')
+    def click_on_question(self, data):
+        self.click_on_element(MainPageLocators.questions[data])
+
+    @allure.step('Ожидание загрузки ответа')
+    def wait_answer_visibility(self, data):
+        self.wait_visibility_of_element(MainPageLocators.answers[data])
+
+    @allure.step('Получение текста ответа')
+    def get_text_of_answer(self, data):
+        return self.get_text(MainPageLocators.answers[data])
