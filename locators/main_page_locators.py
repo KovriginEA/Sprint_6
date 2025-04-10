@@ -28,8 +28,6 @@ class MainPageLocators:
         8: (By.XPATH, '//*[contains(@id,"accordion__panel-7")]')
     }
 
-
-    #order_button_in_main = (By.XPATH, '//div[contains(@class, "Home_FinishButton")]/button')
     order_button = (By.XPATH, '//div[@class = "Header_Nav__AGCXC"]/button[text() = "Заказать"]')
 
     logo_scooter = (By.XPATH, '//*[contains(@class, "Header_LogoScooter")]')
