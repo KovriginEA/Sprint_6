@@ -21,9 +21,9 @@ class BasePage:
     def click_on_element(self, locator):
         self.driver.find_element(*locator).click()
 
-    # @allure.step('Ввод значения в поле')
-    # def send_keys_to_input(self, locator, keys):
-    #     self.driver.find_element(*locator).send_keys(keys)
+    @allure.step('Ввод значения в поле')
+    def send_value_to_input(self, locator, keys):
+        self.driver.find_element(*locator).send_keys(keys)
 
     @allure.step('Получаем текст элемента')
     def get_text(self, locator):
@@ -41,3 +41,5 @@ class BasePage:
     @allure.step('Проверка отображения элемента')
     def verify_displaying_of_element(self, locator):
         return self.driver.find_element(*locator).is_displayed()
+
+
