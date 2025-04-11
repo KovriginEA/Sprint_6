@@ -10,8 +10,7 @@ class OrderPageLocators:
     select_metro = (By.XPATH, ".//li[@class='select-search__row']")
     input_phone = (By.XPATH, "//input[@placeholder='* Телефон: на него позвонит курьер']")
     button_next = (By.XPATH, "//button[text()='Далее']")
-    button_cookie = (By.XPATH, '//button[@id="rcc-confirm-button" and '
-                               'contains(@class, "App_CookieButton")]')
+    button_cookie = (By.XPATH, '//button[@id="rcc-confirm-button" and contains(@class, "App_CookieButton")]')
 
     input_date = (By.XPATH, "//input[@placeholder='* Когда привезти самокат']")
     grey_scooter = (By.XPATH, "//input[@id='grey']")
