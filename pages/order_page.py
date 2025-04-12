@@ -1,8 +1,6 @@
 import allure
 from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePage
-from data import TestData
-
 
 class OrderPage(BasePage):
 
@@ -31,7 +29,6 @@ class OrderPage(BasePage):
     @allure.step('Заполнение первой формы')
     def fill_first_form(self, test_data):
 
-        # self.click_on_element(OrderPageLocators.button_cookie)
         self.wait_visibility_of_element(OrderPageLocators.input_name)
         self.click_on_element(OrderPageLocators.input_name)
         self.send_value_to_input(OrderPageLocators.input_name, test_data[0])
